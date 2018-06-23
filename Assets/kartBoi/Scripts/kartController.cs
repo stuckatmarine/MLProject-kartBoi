@@ -10,8 +10,13 @@ public class kartController : MonoBehaviour {
     public Text zLocationText;
     public Text distToTargetText;
 
-    public Transform currentTarget;
-    public float distToTarget;
+    public Transform currentTarget; //position of target
+    public float distToTarget; //distance to target (x & y)
+
+    public bool objectForward = false; //detect if objects around cart
+    public bool objectBehind = false;
+    public bool objectRight = false;
+    public bool objectLeft = false;
 
     // Use this for initialization
     void Start () {
