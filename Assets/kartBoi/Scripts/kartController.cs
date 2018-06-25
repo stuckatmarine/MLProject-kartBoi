@@ -49,7 +49,7 @@ public class kartController : MonoBehaviour {
         }
         else
         {
-            this.transform.position = new Vector3(this.transform.position.x + amount, this.transform.position.y, this.transform.position.z);
+            this.transform.position = new Vector3((int)(this.transform.position.x + 0.5) + amount, this.transform.position.y, this.transform.position.z);
             xLocationText.text = ((int)transform.position.x).ToString();
             UpdateDistToTarget();
             CheckForObstacles();
@@ -68,7 +68,7 @@ public class kartController : MonoBehaviour {
         }
         else
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + amount);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, (int)(this.transform.position.z + 0.5) + amount);
             zLocationText.text = ((int)transform.position.z).ToString();
             UpdateDistToTarget();
             CheckForObstacles();
@@ -83,9 +83,9 @@ public class kartController : MonoBehaviour {
 
     private void CheckForObstacles()
     {
-        objectRight = Physics.Linecast(transform.position, new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z));
+    /*    objectRight = Physics.Linecast(transform.position, new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z));
         objectLeft = Physics.Linecast(transform.position, new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z));
         objectForward = Physics.Linecast(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1f));
         objectBehind = Physics.Linecast(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1f));
-    }
+    */}
 }
