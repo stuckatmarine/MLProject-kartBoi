@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65460039176578576}
   - component: {fileID: 114330724088126980}
   m_Layer: 0
-  m_Name: x-Hitbox
+  m_Name: LeftHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 65978913034616740}
   - component: {fileID: 114476795690328554}
   m_Layer: 0
-  m_Name: z+Hitbox
+  m_Name: ForwardHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 65979117619875812}
   - component: {fileID: 114861074230773364}
   m_Layer: 0
-  m_Name: x+Hitbox
+  m_Name: RightHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 65562083506115184}
   - component: {fileID: 114972486389676618}
   m_Layer: 0
-  m_Name: z-Hitbox
+  m_Name: BehindHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964001d25bd2e6f409088a1f29bb00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1656301270878622}
+  kart: {fileID: 1656301270878622}
   thisPosition: left
 --- !u!114 &114345017990319212
 MonoBehaviour:
@@ -579,8 +579,10 @@ MonoBehaviour:
   zLocationText: {fileID: 0}
   distToTargetText: {fileID: 0}
   currentTarget: {fileID: 0}
+  exit: {fileID: 0}
   distToTarget: 0
-  currentTargetIndex: 0
+  targetVisible: 0
+  targetReached: 0
   objectForward: 0
   objectBehind: 0
   objectRight: 0
@@ -596,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964001d25bd2e6f409088a1f29bb00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1656301270878622}
+  kart: {fileID: 1656301270878622}
   thisPosition: forward
 --- !u!114 &114861074230773364
 MonoBehaviour:
@@ -609,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964001d25bd2e6f409088a1f29bb00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1656301270878622}
+  kart: {fileID: 1656301270878622}
   thisPosition: right
 --- !u!114 &114972486389676618
 MonoBehaviour:
@@ -622,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964001d25bd2e6f409088a1f29bb00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1656301270878622}
+  kart: {fileID: 1656301270878622}
   thisPosition: behind
 --- !u!124 &124831960415745570
 Behaviour:

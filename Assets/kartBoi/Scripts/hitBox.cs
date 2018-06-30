@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class hitBox : MonoBehaviour {
 
-    public GameObject target;
+    public GameObject kart;
     public string thisPosition = "";
 
 	// Use this for initialization
@@ -17,42 +17,44 @@ public class hitBox : MonoBehaviour {
 		
 	}
 
+    /* When another collider enters the hitbox, set corresponding bool in kartController script */
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("hitBox Entered by " + other.name);
         switch (thisPosition)
         {
             case ("right"):
-                target.GetComponent<kartController>().objectRight = true;
+                kart.GetComponent<kartController>().objectRight = true;
                 break;
             case ("left"):
-                target.GetComponent<kartController>().objectLeft = true;
+                kart.GetComponent<kartController>().objectLeft = true;
                 break;
             case ("forward"):
-                target.GetComponent<kartController>().objectForward = true;
+                kart.GetComponent<kartController>().objectForward = true;
                 break;
             case ("behind"):
-                target.GetComponent<kartController>().objectBehind = true;
+                kart.GetComponent<kartController>().objectBehind = true;
                 break;
         }
     }
 
+    /* When another collider exits the hitbox, set corresponding bool in kartController script */
     void OnTriggerExit(Collider other)
     {
         Debug.Log("hitBox Exited by " + other.name);
         switch (thisPosition)
         {
             case ("right"):
-                target.GetComponent<kartController>().objectRight = false;
+                kart.GetComponent<kartController>().objectRight = false;
                 break;
             case ("left"):
-                target.GetComponent<kartController>().objectLeft = false;
+                kart.GetComponent<kartController>().objectLeft = false;
                 break;
             case ("forward"):
-                target.GetComponent<kartController>().objectForward = false;
+                kart.GetComponent<kartController>().objectForward = false;
                 break;
             case ("behind"):
-                target.GetComponent<kartController>().objectBehind = false;
+                kart.GetComponent<kartController>().objectBehind = false;
                 break;
         }
     }
